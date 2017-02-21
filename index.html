@@ -13,19 +13,32 @@
   </head>
 
   <body>
+
     <div class="background container-fluid">
+
+  <!-- top icon area -->
 
       <div class="col-sm-1">
         <i class="wi wi-day-cloudy icon"></i>
       </div>
 
+  <!-- main section -->
+
       <div class="col-sm-12">
-        <form class="formsection">
-          <input class="inputtext" type="text" name="search" placeholder="enter a city name"/>
+        <form class="formsection" autocomplete="off">
+          <input id="txt-input" class="inputtext" type="text" name="search" placeholder="enter a city name"/>
         </form>
       </div>
 
+      <div id="current-weather">
+
+      </div>
+
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/main.js"></script>
+
   </body>
 
 </html>
