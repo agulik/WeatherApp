@@ -9,36 +9,7 @@
 // 5). retrieve weather data from api
 
 
-
-// function to convert City to Latitude and Longitude
-
-var getLocation = function(address) {
-  var geocoder = new google.maps.Geocoder();
-  geocoder.geocode( {'address': address}, function(results, status) {
-
-    if (status == google.maps.GeocoderStatus.OK) {
-      var latitude = results[0].geometry.location.lat();
-      var longitude = results[0].geometry.location.lng();
-      console.log(latitude, longitude); // this is the lat and lng of Montreal
-    }
-  });
-}
-
-getLocation('Montreal');
-
-
-
-/*
-
-// create a variable for the weather API
-
-// include "/latitude,longitude" at end of api call
-
-var weatherApi = "https://api.darksky.net/forecast/53fdce807cb09b72e9a6318f4643f6b3"
-
-
-// add event listener for pressing enter
-// if the enter key is pressed, it fires off the getWeather function
+// event listener for pressing enter
 
 $("#txt-input").keydown(function (e) {
   var key = e.which;
@@ -47,27 +18,35 @@ $("#txt-input").keydown(function (e) {
   }
 })
 
-// getWeather function
-// need to retrieve api data based on input value
-// need to present spinner when fetching data and remove it once data is fetched
+// getWeather function to take input value, convert to lat/lng and get req api
+
 
 function getWeather() {
 
-  // add spinner to indicate something is happening
-  $('<i class="fa fa-refresh fa-spin"/>').appendTo('#current-weather');
+  // helper function to convert City to Latitude and Longitude
 
-  // get text input value
+  var getLocation = function(address) {
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode( {'address': address}, function(results, status) {
+
+      if (status == google.maps.GeocoderStatus.OK) {
+        var latitude = results[0].geometry.location.lat();
+        var longitude = results[0].geometry.location.lng();
+        console.log(latitude,longitude); // this is the lat and lng of Montreal
+      }
+    });
+  }
+
   var inputValue = $("#txt-input").val();
 
-  // make the ajax request
-  $.getJSON(weatherApi, function(response)) {
+  getLocation(inputValue);
 
   }
 
 
 
-}
+  // create a variable for the weather API
 
-*/
+  // include "/latitude,longitude" at end of api call
 
-// need to add
+  var weatherApi = "https://api.darksky.net/forecast/53fdce807cb09b72e9a6318f4643f6b3"
