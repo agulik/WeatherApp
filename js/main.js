@@ -8,8 +8,6 @@ $("#txt-input").keydown(function (e) {
 
   if (key === 13) {
 
-    // declare global variable for input value
-
     var inputValue = document.getElementById('txt-input').value;
 
     console.log(inputValue);
@@ -17,23 +15,26 @@ $("#txt-input").keydown(function (e) {
   }
 })
 
-// function that converts city name to lat/lng values
+// function for converting city name to lat/lng values
 
-function getLocation(address) {
+
+function getLocation(address, callback) {
 
   var geocoder = new google.maps.Geocoder();
+
   geocoder.geocode( {'address': address}, function(results, status) {
 
     if (status == google.maps.GeocoderStatus.OK) {
       var latitude = results[0].geometry.location.lat();
       var longitude = results[0].geometry.location.lng();
-      console.log(latitude,longitude); // this is the lat and lng of Montreal
+      callback({ Address: address, Latitude: latitude, Longitude: longitude });
     }
   });
 }
 
-getLocation('Malbaie');
-
+getLocation('Copenhagen', function(data) {
+  console.log(data);
+});
 
 
   // create a variable for the weather API
