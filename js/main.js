@@ -3,15 +3,13 @@
 
 var inputValue = document.getElementById("txt-input");
 
-// event listener for pressing enter
-
-
-
 
 // function for converting city name to lat/lng values
 
 
 function getLocation(address, callback) {
+
+  var geocoder = new google.maps.Geocoder();
 
   inputValue.addEventListener("keydown", function(e) {
 
@@ -21,8 +19,6 @@ function getLocation(address, callback) {
 
     }
   });
-  
-  var geocoder = new google.maps.Geocoder();
 
   geocoder.geocode( {"address": address}, function(results, status) {
 
@@ -34,11 +30,9 @@ function getLocation(address, callback) {
   });
 }
 
-getLocation("Copenhagen", function(data) {
+getLocation("Paris", function(data) {
   console.log(data);
 });
-
-
 
 
   // create a variable for the weather API
