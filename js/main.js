@@ -1,3 +1,4 @@
+// I need to add the geocode function to the scrope of the text inputValue
 
 // declaire global input variable
 
