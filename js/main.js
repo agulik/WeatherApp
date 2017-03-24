@@ -8,34 +8,37 @@ var geocoder;
 // initialize google map geocode function
 
 function initializeMap() {
+
   geocoder = new google.maps.Geocoder();
-}
-
-// converting input to lat/lng coordinates function
-
-function convertAddress(address, callback) {
-  geocoder.geocode( {"address": address}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      var latitude = results[0].geometry.location.lat();
-      var longitude = results[0].geometry.location.lng();
-      callback({ Address: address, Latitude: latitude, Longitude: longitude });
-    }
-  });
-}
-
-// press-enter event listener which calls convertAddress function onpress
 
   inputValue.addEventListener("keydown", function(e) {
     if (e.keyCode === 13) {
         console.log(inputValue.value);
       }
-});
+  });
+
+}
+
+// converting input to lat/lng coordinates function
+
+function convertAddress(address, callback) {
+
+  geocoder.geocode( {"address": address}, function (results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      var latitude = results[0].geometry.location.lat();
+      var longitude = results[0].geometry.location.lng();
+      callback({ address: address, latitude: latitude, longitude: longitude });
+
+    }
+  });
+}
+
 
 //initialize the map on page load
 
 initializeMap();
 
-convertAddress("Copenhagen", function(data) {
+convertAddress("Berlin", function(data) {
   console.log(data);
 });
 
