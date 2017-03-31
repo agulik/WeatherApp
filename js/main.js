@@ -40,9 +40,11 @@ function convertAddress(address, callback) {
 
 initializeMap();
 
-convertAddress("Berlin", function(data) {
+convertAddress("Copenhagen", function(data) {
   console.log(data);
 });
+
+
 
 
 // create a variable for the weather API
