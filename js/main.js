@@ -2,28 +2,38 @@
 // declaire global input variable
 
 var inputValue = document.getElementById("address");
+var google;
+var geocoder;
 
 // initialize google map geocode function
 
-inputValue.addEventListener("keydown", function(e) {
+function initializeMap() {
+
+  geocoder = new google.maps.Geocoder();
+
+  inputValue.addEventListener("keydown", function(e) {
     if (e.keyCode === 13) {
         console.log(inputValue.value);
-    }
-});
+      }
+  });
+
+}
 
 // converting input to lat/lng coordinates function
 
-function getAddressPosition(address) {
-    return fetch ("https://maps.googleapis.com/maps/api/geocode/jsonp?address=" + address)
-    .then(function(response) {
-        var data = JSON.parse(response);
-        // console.log(data.results[0].geometry.location);
-    // }).catch(function(error) {
-    //     console.log(error);
-    })
-}
+function convertAddress(address, callback) {
 
-getAddressPosition("Montreal");
+  geocoder.geocode( {"address": address}, function (results, status) {
+
+    if (status == google.maps.GeocoderStatus.OK) {
+
+      var latitude = results[0].geometry.location.lat();
+      var longitude = results[0].geometry.location.lng();
+      callback({ address: address, latitude: latitude, longitude: longitude });
+
+    }
+  });
+}
 
 // create a variable for the weather API
 
