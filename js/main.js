@@ -14,14 +14,12 @@ inputValue.addEventListener("keydown", function(e) {
 // converting input to lat/lng coordinates function
 
 function getAddressPosition(address) {
-  console.log(address)
-    return fetch ("https://maps.googleapis.com/maps/api/geocode/json?address=" + address)
+    return fetch ("https://maps.googleapis.com/maps/api/geocode/jsonp?address=" + address)
     .then(function(response) {
-      console.log(response);
         var data = JSON.parse(response);
-        console.log(data.results[0].geometry.location);
-    }).catch(function(error) {
-        console.log(error);
+        // console.log(data.results[0].geometry.location);
+    // }).catch(function(error) {
+    //     console.log(error);
     })
 }
 
