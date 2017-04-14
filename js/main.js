@@ -35,6 +35,10 @@ function convertAddress(address, callback) {
   });
 }
 
+convertAddress("Copenhagen", function(data) {
+  console.log(data);
+});
+
 // create a variable for the weather API
 
 // include "/latitude,longitude" at end of api call
