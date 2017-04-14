@@ -35,17 +35,11 @@ function convertAddress(address, callback) {
   });
 }
 
-
-//initialize the map on page load
-
 initializeMap();
 
 convertAddress("Copenhagen", function(data) {
   console.log(data);
 });
-
-
-
 
 // create a variable for the weather API
 
