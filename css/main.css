@@ -23,30 +23,39 @@ p {
     background-color: #59D0FF;
     background-size: cover;
     height: 100vh;
+    padding: 0;
+    margin:0;
 }
-
 
 /* icon */
 
 .icon {
-    margin-top: 38px;
-    margin-left: 15px;
+    position: fixed;
+    top: 40px;
+    left: 40px;
     font-size: 50px;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    cursor: hand;
 }
 
 
 /*input field */
 
-.formsection {
-    margin-top: 115px;
+.main-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 form {
-    margin: 50px;
-    padding: 5px;
     background: #59D0FF;
     display: inline-block;
-    font-size: 65px;
+    font-size: 24px;
 }
 
 form input {
@@ -72,4 +81,22 @@ form input {
 
 :-ms-input-placeholder {
     color: #fff;
+}
+
+.forecast-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.current-temp {
+  display: flex;
+  font-size: 44px;
+  text-align: left;
+}
+
+.additional-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  text-align: left;
 }
