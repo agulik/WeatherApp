@@ -27,64 +27,6 @@ p {
   margin: 0;
 }
 
-
-/* icon */
-
-/*.button-container {
-  position: fixed;
-  top: 30px;
-  left: 40px;
-  display: flex;
-  align-items: flex-start;
-  cursor: pointer;
-  cursor: hand;
-  height: 27px;
-  width: 35px;
-  cursor: pointer;
-  z-index: 100;
-  transition: transform 0.5s ease;
-}
-
-.button-container:hover {
-  transform: scale(0.9)
-}
-
-.button-container.active .top {
-  transform: translateY(11px) translateX(0) rotate(45deg);
-  background: #FFF;
-}
-
-.button-container.active .middle {
-  opacity: 0;
-  background: #fff;
-}
-
-.button-container.active .bottom {
-  transform: translateY(-11px) translateX(0) rotate(-45deg);
-  background: #fff;
-}
-
-.button-container span {
-  background: #fff;
-  border: none;
-  height: 2.5px;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all .35s ease;
-  cursor: pointer;
-}
-
-.button-container span:nth-of-type(2) {
-  top: 11px;
-}
-
-.button-container span:nth-of-type(3) {
-  top: 22px;
-}*/
-
-
 /*input field */
 
 .search-placement {
