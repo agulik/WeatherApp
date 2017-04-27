@@ -1,40 +1,70 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Local Weather App</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="css/weather-icons.min.css">
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Local Weather App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="css/weather-icons.min.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
-    <div id="app" class="background container-fluid">
+  <div id="app" class="background container-fluid">
 
-      <div class="icon">
-        <i class="wi wi-day-cloudy icon" onClick="location.reload()"></i>
+<!-- searchbar section, always top left -->
+
+      <div class="search-placement" id="search-form">
+        <form class="city-form" autocomplete="off">
+          <input id="address" class="city-input" type="text" name="search" placeholder="enter a city name" />
+        </form>
       </div>
 
-          <div class="main-app">
-            <form class="city-form" autocomplete="off">
-                <input id="address" class="city-input" type="text" name="search" placeholder="enter a city name" />
-            </form>
-            <div class="forecast-box">
-              <div class="current-temp"></div>
-              <div class="additional-info">
-                <div class="weather-summary"></div>
-                <div class="weather-max"></div>
-                <div class="weather-min"></div>
-              </div>
-            </div>
+<!-- main app area with current forecast and hourly forecast -->
+    <div class="main-app">
+      <div class="top-section">
+        <div class="weather-icon"></div>
+        <div class="current-temp"></div>
+        <div class="weather-summary"></div>
+      </div>
+    
+      <div class="bottom-section">
+        <div class="line-area">
+          <div class="today"></div>
+          <div class="max-min">
+            <div class="weather-max"></div>
+            <div class="weather-min"></div>
           </div>
+        </div>
 
+        <div class="three-day-forecast">
+          <div class="one">
+            <div class="time-one"></div>
+            <div class="icon-one"></div>
+            <div class="temp-one"></div>
+          </div>
+          <div class="two">
+            <div class="time-two"></div>
+            <div class="icon-two"></div>
+            <div class="temp-two"></div>
+          </div>
+          <div class="three">
+            <div class="time-three"></div>
+            <div class="icon-three"></div>
+            <div class="temp-three"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="js/app.js"></script>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+  <script src="js/app.js"></script>
 
 </body>
 
